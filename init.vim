@@ -65,19 +65,31 @@ map <C-s> :w<CR>
 map Q :q<CR>
 map R :source $MYVIMRC<CR>
 
+
+
+"在 调用 call plug#begin('~/.config/nvim/plugged') 之前 设置plug_url_format即可
+let g:plug_url_format='https://git::@hub.fastgit.org/%s.git'
 "使用plugged来管理插件
 call plug#begin('$HOME/.config/nvim/plugged')
 "添加目录树：nerdtree"
 Plug 'scrooloose/nerdtree'
 "语法检查和语义错误
 Plug 'dense-analysis/ale'
+if (!exists('g:vscode'))
 "快速查找，还未找到方案
 Plug 'easymotion/vim-easymotion'
+else
+"vscode  neovim 推荐使用
+"Plug 'asvetliakov/vim-easymotion'
+Plug 'thorneLew/vscode-vim-easymotion'
+endif
 "airline插件
-Plug 'vim-airline/vim-airline'
-"皮肤插件
 Plug 'morhetz/gruvbox'
 call plug#end()
+
+"键位冲突修改 使用 <Leader> + s 触发
+map <Leader> <Plug>(easymotion-prefix)
+
 
 "gruvbox - start
 let g:gruvbox_italic=1
