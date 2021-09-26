@@ -75,16 +75,23 @@ call plug#begin('$HOME/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 "语法检查和语义错误
 Plug 'dense-analysis/ale'
-if (!exists('g:vscode'))
-"快速查找，还未找到方案
-Plug 'easymotion/vim-easymotion'
-else
-"vscode  neovim 推荐使用
-"Plug 'asvetliakov/vim-easymotion'
-Plug 'thorneLew/vscode-vim-easymotion'
-endif
+"快速注释 gc
+Plug 'tpope/vim-commentary'
 "airline插件
 Plug 'morhetz/gruvbox'
+"coc语言补全插件
+Plug 'neoclide/coc.nvim'
+"快速添加'|"|<|{ 等 
+Plug 'tpope/vim-surround'
+if (!exists('g:vscode'))
+				"快速查找，还未找到方案
+				Plug 'easymotion/vim-easymotion'
+else
+				"vscode  neovim 推荐使用
+				"Plug 'asvetliakov/vim-easymotion'
+				Plug 'thorneLew/vscode-vim-easymotion'
+endif
+
 call plug#end()
 
 "键位冲突修改 使用 <Leader> + s 触发
@@ -100,3 +107,12 @@ set background=dark
 
 "nerdtree config
 map tt :NERDTreeToggle<CR> 
+
+
+"vscode neovim 配置
+if (exists('g:vscode'))
+xmap gc   <Plug> VSCodeCommentary
+nmap gc   <Plug> VSCodeCommentary
+omap gc   <Plug> VSCodeCommentary
+nmap gcc <Plug> VSCodeCommentaryLine
+endif
