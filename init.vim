@@ -67,9 +67,8 @@ noremap K 5k
 "映射快捷键 s设置空，ctrl + s设置为保存，Q设置为退出，R设置为刷新MYVIMRC
 map s <nop>
 map <C-s> :w<CR>
-map Q :q<CR>
-map R :source $MYVIMRC<CR>
-
+map <C-q> :q<CR>
+map <C-r> :source $MYVIMRC<CR>
 
 
 "在 调用 call plug#begin('~/.config/nvim/plugged') 之前 设置plug_url_format即可
@@ -85,10 +84,10 @@ Plug 'tpope/vim-commentary'
 "airline插件
 Plug 'morhetz/gruvbox'
 "coc语言补全插件
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "快速添加'|"|<|{ 等 
 Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 if (!exists('g:vscode'))
 				"快速查找，还未找到方案
 				Plug 'easymotion/vim-easymotion'
@@ -105,6 +104,8 @@ map <Leader> <Plug>(easymotion-prefix)
 
 
 "gruvbox - start
+"
+if (!exists('g:vscode'))
 let g:gruvbox_italic=1
 color gruvbox
 set background=dark
@@ -116,7 +117,7 @@ map tt :NERDTreeToggle<CR>
 
 "coc.nvim -- start
 "
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser']
 
 
 " unicode characters in the file autoload/float.vim
@@ -181,6 +182,7 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+endif
 "coc.nvim --end
 
 
