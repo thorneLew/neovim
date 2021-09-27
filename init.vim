@@ -47,6 +47,9 @@ set ignorecase
 "自动大小写识别
 set smartcase
 
+"可视模式下，Y复制到系统剪切版
+vnoremap Y "+y
+
 "定义快捷键 sl右分屏 sh左 sj上 sk 下分屏
 noremap <LEADER><CR> :nohlsearch<CR>
 noremap sl :set splitright<CR>:vsplit<CR> 
@@ -87,7 +90,8 @@ Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "快速添加'|"|<|{ 等 
 Plug 'tpope/vim-surround'
-
+"快速剪切版查找插件
+Plug 'junegunn/vim-peekaboo'
 if (!exists('g:vscode'))
 				"快速查找，还未找到方案
 				Plug 'easymotion/vim-easymotion'
@@ -117,7 +121,7 @@ map tt :NERDTreeToggle<CR>
 
 "coc.nvim -- start
 "
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank']
 
 
 " unicode characters in the file autoload/float.vim
@@ -181,7 +185,7 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<Cr>
 endif
 "coc.nvim --end
 
