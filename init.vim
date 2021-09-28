@@ -16,6 +16,7 @@ set encoding=utf-8
 " set tabnumber
 set tabstop=4
 set shiftwidth=4
+set scrolloff=5
 
 "兼容编辑器颜色
 let &t_ut=''
@@ -96,6 +97,11 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'mg979/vim-visual-multi'
 "快速选中块 
 Plug 'gcmt/wildfire.vim'
+"快速搜索文件
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+nnoremap <silent> <LEADER>f :Files<CR>
 
 if (!exists('g:vscode'))
 				"快速查找，还未找到方案
@@ -123,10 +129,12 @@ set background=dark
 
 "nerdtree config
 map tt :NERDTreeToggle<CR> 
+" current files menu
+map tn :exec('NERDTree '.expand('%:h'))<CR>
 
 "coc.nvim -- start
 "
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-rainbow-fart']
 
 
 " unicode characters in the file autoload/float.vim
