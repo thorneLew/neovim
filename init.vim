@@ -92,6 +92,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 "快速剪切版查找插件
 Plug 'junegunn/vim-peekaboo'
+"快速选中
+Plug 'mg979/vim-visual-multi'
+"快速选中块 
+Plug 'gcmt/wildfire.vim'
+
 if (!exists('g:vscode'))
 				"快速查找，还未找到方案
 				Plug 'easymotion/vim-easymotion'
@@ -185,7 +190,7 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<Cr>
+nnoremap <silent> <LEADER>y  :<C-u>CocList -A --normal yank<Cr>
 endif
 "coc.nvim --end
 
@@ -195,5 +200,5 @@ if (exists('g:vscode'))
 xmap gc   <Plug> VSCodeCommentary
 nmap gc   <Plug> VSCodeCommentary
 omap gc   <Plug> VSCodeCommentary
-nmap gcc <Plug> VSCodeCommentaryLine
+nmap gcc  <Plug> VSCodeCommentaryLine
 endif
