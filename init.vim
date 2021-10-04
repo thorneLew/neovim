@@ -51,6 +51,10 @@ set smartcase
 "可视模式下，Y复制到系统剪切版
 vnoremap Y "+y
 
+"lazygit
+
+noremap <C-g> :new<CR>:term lazygit<CR>i
+
 "定义快捷键 sl右分屏 sh左 sj上 sk 下分屏
 noremap <LEADER><CR> :nohlsearch<CR>
 noremap sl :set splitright<CR>:vsplit<CR> 
@@ -104,12 +108,12 @@ Plug 'junegunn/fzf.vim'
 nnoremap <silent> <LEADER>f :Files<CR>
 
 if (!exists('g:vscode'))
-				"快速查找，还未找到方案
-				Plug 'easymotion/vim-easymotion'
+	"快速查找，还未找到方案
+	Plug 'easymotion/vim-easymotion'
 else
-				"vscode  neovim 推荐使用
-				"Plug 'asvetliakov/vim-easymotion'
-				Plug 'thorneLew/vscode-vim-easymotion'
+	"vscode  neovim 推荐使用
+	"Plug 'asvetliakov/vim-easymotion'
+	Plug 'thorneLew/vscode-vim-easymotion'
 endif
 
 call plug#end()
@@ -121,6 +125,7 @@ map <Leader> <Plug>(easymotion-prefix)
 "gruvbox - start
 "
 if (!exists('g:vscode'))
+
 let g:gruvbox_italic=1
 color gruvbox
 set background=dark
@@ -128,13 +133,13 @@ set background=dark
 
 
 "nerdtree config
-map tt :NERDTreeToggle<CR> 
+map <LEADER>t :NERDTreeToggle<CR> 
 " current files menu
 map tn :exec('NERDTree '.expand('%:h'))<CR>
 
 "coc.nvim -- start
 "
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-tsserver', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-rainbow-fart']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-rainbow-fart', 'coc-highlight', 'coc-vetur']
 
 
 " unicode characters in the file autoload/float.vim
@@ -186,6 +191,10 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window.
 nnoremap <silent> <LEADER>h :call <SID>show_documentation()<CR>
 
+"format codeFile
+vmap <C-f> <Plug>(coc-format-selected)
+
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -199,6 +208,7 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 nnoremap <silent> <LEADER>y  :<C-u>CocList -A --normal yank<Cr>
+
 endif
 "coc.nvim --end
 
