@@ -1,6 +1,3 @@
-"set runtimepath^=~/.vim runtimepath+=~/.vim/after
-"let &packpath = &runtimepath
-"source ~/.vimrc
 
 "兼容设置
 set nocompatible
@@ -105,22 +102,15 @@ Plug 'gcmt/wildfire.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-nnoremap <silent> <LEADER>f :Files<CR>
-
-if (!exists('g:vscode'))
-	"快速查找，还未找到方案
-	Plug 'easymotion/vim-easymotion'
-else
-	"vscode  neovim 推荐使用
-	"Plug 'asvetliakov/vim-easymotion'
-	Plug 'thorneLew/vscode-vim-easymotion'
-endif
+Plug 'easymotion/vim-easymotion'
+Plug 'thorneLew/vscode-vim-easymotion'
 
 call plug#end()
 
 "键位冲突修改 使用 <Leader> + s 触发
 map <Leader> <Plug>(easymotion-prefix)
 
+nnoremap <silent> <LEADER>f :Files<CR>
 
 "gruvbox - start
 "
