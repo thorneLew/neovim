@@ -49,7 +49,6 @@ set smartcase
 vnoremap Y "+y
 
 "lazygit
-
 noremap <C-g> :new<CR>:term lazygit<CR>i
 
 "定义快捷键 sl右分屏 sh左 sj上 sk 下分屏
@@ -102,8 +101,11 @@ Plug 'gcmt/wildfire.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+"快速查找
 Plug 'easymotion/vim-easymotion'
 Plug 'thorneLew/vscode-vim-easymotion'
+"状态栏
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -128,7 +130,6 @@ map <LEADER>t :NERDTreeToggle<CR>
 map tn :exec('NERDTree '.expand('%:h'))<CR>
 
 "coc.nvim -- start
-"
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-rainbow-fart', 'coc-highlight', 'coc-vetur']
 
 
