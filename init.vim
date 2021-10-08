@@ -83,7 +83,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 "语法检查和语义错误
 Plug 'dense-analysis/ale'
-"快速注释 gc
+"快速注释
 Plug 'tpope/vim-commentary'
 
 Plug 'morhetz/gruvbox'
@@ -126,6 +126,12 @@ set background=dark
 
 "airline
 let g:airline_theme='angr'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = '▶'
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" let g:airline_powerline_fonts = 1
+map <C-t> :tabnew
+nnoremap <tab> :bn<CR>
 
 "nerdtree config
 map <LEADER>t :NERDTreeToggle<CR> 
