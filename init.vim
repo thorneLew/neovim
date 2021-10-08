@@ -85,7 +85,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 "快速注释 gc
 Plug 'tpope/vim-commentary'
-"airline插件
+
 Plug 'morhetz/gruvbox'
 "coc语言补全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -106,6 +106,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'thorneLew/vscode-vim-easymotion'
 "状态栏
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -123,6 +124,8 @@ color gruvbox
 set background=dark
 "gruvbox - end
 
+"airline
+let g:airline_theme='angr'
 
 "nerdtree config
 map <LEADER>t :NERDTreeToggle<CR> 
