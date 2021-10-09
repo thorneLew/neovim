@@ -139,7 +139,7 @@ map <LEADER>t :NERDTreeToggle<CR>
 map tn :exec('NERDTree '.expand('%:h'))<CR>
 
 "coc.nvim -- start
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-rainbow-fart', 'coc-highlight', 'coc-vetur']
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-highlight', 'coc-vetur']
 
 
 " unicode characters in the file autoload/float.vim
