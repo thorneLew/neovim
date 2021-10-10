@@ -86,6 +86,7 @@ Plug 'dense-analysis/ale'
 "快速注释
 Plug 'tpope/vim-commentary'
 
+" 皮肤主题（观察）
 Plug 'morhetz/gruvbox'
 "coc语言补全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -107,6 +108,8 @@ Plug 'thorneLew/vscode-vim-easymotion'
 "状态栏
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" vim 终端
+Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
@@ -118,6 +121,13 @@ nnoremap <silent> <LEADER>f :Files<CR>
 "gruvbox - start
 "
 if (!exists('g:vscode'))
+
+"floaterm config
+let  g:floaterm_keymap_new     =  '<F7>'
+let  g:floaterm_keymap_prev    =  '<F8>'
+let  g:floaterm_keymap_next    =  '<F9>'
+let  g:floaterm_keymap_toggle  =  '<F12>'
+
 
 let g:gruvbox_italic=1
 color gruvbox
