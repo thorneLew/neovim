@@ -1,6 +1,6 @@
 {
-	"coc.preferences.extensionUpdateCheck": "daily",
-	"coc.preferences.formatOnSaveFiletypes": [
-		"json"
-	]
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnSaveFiletypes": ["json"],
+  "eslint.autoFixOnSave": true,
+  "eslint.codeActionsOnSave.mode": "all"
 }

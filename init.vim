@@ -14,6 +14,10 @@ set encoding=utf-8
 set tabstop=4
 set shiftwidth=4
 set scrolloff=5
+set expandtab
+set autoindent
+
+
 
 "兼容编辑器颜色
 let &t_ut=''
@@ -142,6 +146,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " let g:airline_powerline_fonts = 1
 map <C-t> :tabnew
 nnoremap <tab> :bn<CR>
+nnoremap <LEADER>d  :bdelete<CR>
 
 "nerdtree config
 map <LEADER>t :NERDTreeToggle<CR> 
@@ -151,9 +156,6 @@ map tn :exec('NERDTree '.expand('%:h'))<CR>
 "coc.nvim -- start
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-highlight', 'coc-vetur']
 
-
-" unicode characters in the file autoload/float.vim
-set encoding=utf-8
 
 " TextEdit might fail if hidden is not set.
 set hidden
