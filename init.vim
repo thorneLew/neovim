@@ -72,6 +72,8 @@ noremap <LEADER>k <C-w>k
 noremap J 5j
 noremap K 5k
 
+inoremap <LEADER>q <Esc>`^
+
 "映射快捷键 s设置空，ctrl + s设置为保存，Q设置为退出，R设置为刷新MYVIMRC
 map s <nop>
 map <C-s> :w<CR>
@@ -90,7 +92,7 @@ Plug 'dense-analysis/ale'
 "快速注释
 Plug 'tpope/vim-commentary'
 
-" 皮肤主题（观察）
+" 皮肤主题
 Plug 'morhetz/gruvbox'
 "coc语言补全插件
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -117,7 +119,7 @@ Plug 'voldikss/vim-floaterm'
 "补全成对的括号
 Plug 'jiangmiao/auto-pairs'
 " 断点工具
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -126,8 +128,6 @@ map <Leader> <Plug>(easymotion-prefix)
 
 nnoremap <silent> <LEADER>f :Files<CR>
 
-"gruvbox - start
-"
 if (!exists('g:vscode'))
 
 " debuger
@@ -142,7 +142,9 @@ let  g:floaterm_keymap_next    =  '<F9>'
 let  g:floaterm_keymap_toggle  =  '<F12>'
 
 
+"gruvbox - start
 let g:gruvbox_italic=1
+let g:gruvbox_termcolors=16
 color gruvbox
 set background=dark
 "gruvbox - end
@@ -152,6 +154,7 @@ let g:airline_theme='angr'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '▶'
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#branch#enabled = 1
 " let g:airline_powerline_fonts = 1
 map <C-t> :tabnew
 nnoremap <tab> :bn<CR>
@@ -164,7 +167,7 @@ map tn :exec('NERDTree '.expand('%:h'))<CR>
 
 "coc.nvim -- start
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-highlight', 'coc-vetur']
-
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 
 " TextEdit might fail if hidden is not set.
 set hidden
