@@ -1,4 +1,6 @@
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               thorne's vimrc                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "兼容设置
 set nocompatible
 filetype on
@@ -47,6 +49,12 @@ set ignorecase
 "自动大小写识别
 set smartcase
 
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 plug                                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "使用plugged来管理插件
 call plug#begin('$HOME/.config/nvim/plugged')
 "添加目录树：nerdtree"
@@ -55,7 +63,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'dense-analysis/ale'
 "快速注释
 Plug 'tpope/vim-commentary'
-
 " 皮肤主题
 Plug 'morhetz/gruvbox'
 "coc语言补全插件
@@ -87,13 +94,31 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                     ui                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"gruvbox - start
+let g:gruvbox_italic=1
+let g:gruvbox_termcolors=16
+color gruvbox
+set background=dark
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                     功能配置                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "键位冲突修改 使用 <Leader> + s 触发
 map <Leader> <Plug>(easymotion-prefix)
+
 
 " fzf plugin
 nnoremap <silent> <LEADER>f :Files<CR>
 
-" debuger
+
+" debuger config
 " packadd! vimspector
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
@@ -105,14 +130,7 @@ let  g:floaterm_keymap_next    =  '<F9>'
 let  g:floaterm_keymap_toggle  =  '<F12>'
 
 
-"gruvbox - start
-let g:gruvbox_italic=1
-let g:gruvbox_termcolors=16
-color gruvbox
-set background=dark
-"gruvbox - end
-
-"airline
+"airline config
 let g:airline_theme='angr'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '▶'
@@ -123,12 +141,17 @@ map <C-t> :tabnew
 nnoremap <tab> :bn<CR>
 nnoremap <LEADER>c  :bdelete<CR>
 
+
 "nerdtree config
 map <LEADER>t :NERDTreeToggle<CR> 
 " current files menu
 map tn :exec('NERDTree '.expand('%:h'))<CR>
 
-"coc.nvim -- start
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 coc.config                                "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-highlight', 'coc-vetur']
 let g:python3_host_prog = '/opt/homebrew/bin/python3'
 
@@ -195,3 +218,8 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 nnoremap <silent> <LEADER>y  :<C-u>CocList -A --normal yank<Cr>
+
+" coc-config - end
+
+
+
