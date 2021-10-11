@@ -114,6 +114,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " vim 终端
 Plug 'voldikss/vim-floaterm'
+"补全成对的括号
+Plug 'jiangmiao/auto-pairs'
+" 断点工具
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -125,6 +129,11 @@ nnoremap <silent> <LEADER>f :Files<CR>
 "gruvbox - start
 "
 if (!exists('g:vscode'))
+
+" debuger
+" packadd! vimspector
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+
 
 "floaterm config
 let  g:floaterm_keymap_new     =  '<F7>'
@@ -146,7 +155,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " let g:airline_powerline_fonts = 1
 map <C-t> :tabnew
 nnoremap <tab> :bn<CR>
-nnoremap <LEADER>d  :bdelete<CR>
+nnoremap <LEADER>c  :bdelete<CR>
 
 "nerdtree config
 map <LEADER>t :NERDTreeToggle<CR> 
