@@ -57,16 +57,34 @@ set smartcase
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "使用plugged来管理插件
 call plug#begin('$HOME/.config/nvim/plugged')
-"添加目录树：nerdtree"
+
+
+"UI
+" 皮肤主题
+Plug 'morhetz/gruvbox'
+
+
+"Language
+
+
+
+"platform
+"coc语言补全插件
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"状态栏
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+
+
+"功能增强
+"
+""添加目录树：nerdtree"
 Plug 'scrooloose/nerdtree'
 "语法检查和语义错误
 Plug 'dense-analysis/ale'
 "快速注释
 Plug 'tpope/vim-commentary'
-" 皮肤主题
-Plug 'morhetz/gruvbox'
-"coc语言补全插件
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "快速添加'|"|<|{ 等 
 Plug 'tpope/vim-surround'
 "快速剪切版查找插件
@@ -78,12 +96,8 @@ Plug 'gcmt/wildfire.vim'
 "快速搜索文件
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 "快速查找
 Plug 'easymotion/vim-easymotion'
-"状态栏
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 " vim 终端
 Plug 'voldikss/vim-floaterm'
 "补全成对的括号
@@ -123,7 +137,7 @@ nnoremap <silent> <LEADER>f :Files<CR>
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 
-"floaterm config
+"floaterm config 终端-弹窗
 let  g:floaterm_keymap_new     =  '<F7>'
 let  g:floaterm_keymap_prev    =  '<F8>'
 let  g:floaterm_keymap_next    =  '<F9>'
@@ -153,7 +167,6 @@ map tn :exec('NERDTree '.expand('%:h'))<CR>
 "                                 coc.config                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-highlight', 'coc-vetur']
-let g:python3_host_prog = '/opt/homebrew/bin/python3'
 
 " TextEdit might fail if hidden is not set.
 set hidden
