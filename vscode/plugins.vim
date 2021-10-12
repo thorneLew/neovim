@@ -3,7 +3,6 @@ call plug#begin('$HOME/.config/nvim/plugged')
     "突出特殊字符
     Plug 'unblevable/quick-scope'
     Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
-
 call plug#end()
 
 map <Leader> <Plug>(easymotion-prefix)
