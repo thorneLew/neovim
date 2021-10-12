@@ -115,6 +115,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'unblevable/quick-scope'
 Plug 'ybian/smartim'
 
+Plug 'brglng/vim-im-select'
 call plug#end()
 
 
@@ -143,6 +144,9 @@ nnoremap <silent> <LEADER>f :Files<CR>
 
 "smartim
 
+"vim-im-select 自定切中英问题解决
+let g:im_select_get_im_cmd = ['im-select']
+let g:im_select_default = 'com.apple.keylayout.ABC'
 
 " debuger config
 " packadd! vimspector
