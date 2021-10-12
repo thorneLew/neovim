@@ -97,7 +97,12 @@ Plug 'gcmt/wildfire.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "快速查找
-Plug 'easymotion/vim-easymotion'
+
+" use normal easymotion when in vim mode
+Plug 'easymotion/vim-easymotion', Cond(!exists('g:vscode'))
+" use vscode easymotion when in vscode mode
+Plug 'asvetliakov/vim-easymotion', Cond(exists('g:vscode'), { 'as': 'vsc-easymotion' })
+
 " vim 终端
 Plug 'voldikss/vim-floaterm'
 "补全成对的括号
