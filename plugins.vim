@@ -109,6 +109,11 @@ Plug 'voldikss/vim-floaterm'
 Plug 'jiangmiao/auto-pairs'
 " 断点工具
 " Plug 'puremourning/vimspector'
+"
+
+"突出特殊字符
+Plug 'unblevable/quick-scope'
+Plug 'ybian/smartim'
 
 call plug#end()
 
@@ -135,6 +140,8 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " fzf plugin
 nnoremap <silent> <LEADER>f :Files<CR>
+
+"smartim
 
 
 " debuger config
@@ -171,7 +178,20 @@ map tn :exec('NERDTree '.expand('%:h'))<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 coc.config                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-eslint', 'coc-prettier', 'coc-git', 'coc-html', 'coc-css', 'coc-go', 'coc-browser', 'coc-yank', 'coc-highlight', 'coc-vetur']
+let g:coc_global_extensions = [
+            \'coc-json', 
+            \'coc-vimlsp', 
+            \'coc-eslint', 
+            \'coc-prettier', 
+            \'coc-git', 
+            \'coc-html', 
+            \'coc-css', 
+            \'coc-go', 
+            \'coc-browser', 
+            \'coc-yank', 
+            \'coc-highlight', 
+            \'coc-vetur'
+            \]
 
 " TextEdit might fail if hidden is not set.
 set hidden

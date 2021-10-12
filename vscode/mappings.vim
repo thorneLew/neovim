@@ -1,3 +1,8 @@
+"快速选行
+noremap J 7j
+noremap K 7k
+
+
 function! s:switchEditor(...) abort
     let count = a:1
     let direction = a:2
@@ -33,3 +38,9 @@ nnoremap <C-w>< <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
 xnoremap <C-w>< <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
 nnoremap <C-w>- <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
 xnoremap <C-w>- <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
+
+"tab切换
+nnoremap <C-l> <Cmd>call <SID>switchEditor(v:count, 'next')<CR>
+xnoremap <C-l> <Cmd>call <SID>switchEditor(v:count, 'next')<CR>
+nnoremap <C-h> <Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
+xnoremap <C-h><Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
