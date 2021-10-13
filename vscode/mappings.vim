@@ -2,6 +2,8 @@
 noremap J 7j
 noremap K 7k
 
+vnoremap Y "+y 
+
 
 function! s:switchEditor(...) abort
     let count = a:1

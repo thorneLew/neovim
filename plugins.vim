@@ -139,6 +139,20 @@ set background=dark
 map <Leader> <Plug>(easymotion-prefix)
 
 
+" vim-visual-multi 不生效 -- 需要再考察
+let g:VM_maps = {}
+let g:VM_maps["Select Operator"] = ''
+let g:VM_maps['Find Under']         = '<C-,>'
+let g:VM_maps['Find Subword Under'] = '<C-,>'
+let g:VM_maps['Select h']           = '<C-Left>'
+let g:VM_maps['Select l']           = '<C-Right>'
+let g:VM_maps['Add Cursor Up']      = '<C-Up>'
+let g:VM_maps['Add Cursor Down']    = '<C-Down>'
+let g:VM_maps['Add Cursor At Pos']  = '<C-x>'
+let g:VM_maps['Add Cursor At Word'] = '<C-w>'
+let g:VM_maps['Remove Region']      = 'q'
+
+
 " fzf plugin
 nnoremap <silent> <LEADER>f :Files<CR>
 

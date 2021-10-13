@@ -10,9 +10,11 @@ call plug#end()
 
 map <Leader> <Plug>(easymotion-prefix)
 
+map <Leader>m <Plug>(wildfire-fuel)
+vmap <Leader>M <Plug>(wildfire-water)
+
 highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
 highlight QuickScopeSecondary guifgc'#5fffff' gui=underline ctermfg=81 cterm=underline
-
 
 "vim-im-select 自定切中英问题解决
 let g:im_select_get_im_cmd = ['im-select']
