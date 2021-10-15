@@ -13,10 +13,10 @@ function! s:switchEditor(...) abort
     endfor
 endfunction
 
-xmap gc   <Plug> VSCodeCommentary
-nmap gc   <Plug> VSCodeCommentary
-omap gc   <Plug> VSCodeCommentary
-nmap gcc  <Plug> VSCodeCommentaryLine
+xmap gc  <Plug>VSCodeCommentary
+nmap gc  <Plug>VSCodeCommentary
+omap gc  <Plug>VSCodeCommentary
+nmap gcc <Plug>VSCodeCommentaryLine
 
 nnoremap z= <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
 nnoremap <tab> <Cmd>call <SID>switchEditor(v:count, 'next')<CR>
