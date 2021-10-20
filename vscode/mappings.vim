@@ -3,6 +3,8 @@ noremap J 7j
 noremap K 7k
 
 vnoremap Y "+y 
+map s <nop>
+map S <nop>
 
 
 function! s:switchEditor(...) abort
