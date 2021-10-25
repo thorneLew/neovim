@@ -6,6 +6,7 @@ vnoremap Y "+y
 map s <nop>
 map S <nop>
 
+noremap <LEADER><CR> :nohlsearch<CR>
 
 function! s:switchEditor(...) abort
     let count = a:1
