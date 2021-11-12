@@ -45,7 +45,7 @@ nnoremap <C-w>- <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
 xnoremap <C-w>- <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
 
 "tab切换
-nnoremap <C-l> <Cmd>call <SID>switchEditor(v:count, 'next')<CR>
-xnoremap <C-l> <Cmd>call <SID>switchEditor(v:count, 'next')<CR>
-nnoremap <C-h> <Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
-xnoremap <C-h><Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
+nnoremap <C-k> <Cmd>call <SID>switchEditor(v:count, 'next')<CR>
+xnoremap <C-k> <Cmd>call <SID>switchEditor(v:count, 'next')<CR>
+nnoremap <C-j> <Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
+xnoremap <C-j><Cmd>call <SID>switchEditor(v:count, 'prev')<CR>
