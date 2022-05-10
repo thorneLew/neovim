@@ -63,7 +63,7 @@ Plug 'mhinz/vim-startify'
 
 "UI
 " 皮肤主题
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
 
 "Language
@@ -117,7 +117,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'unblevable/quick-scope'
 Plug 'ybian/smartim'
 
-Plug 'brglng/vim-im-select'
+" Plug 'brglng/vim-im-select'
 call plug#end()
 
 
@@ -125,10 +125,10 @@ call plug#end()
 "                                     ui                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "gruvbox - start
-let g:gruvbox_italic=1
-let g:gruvbox_termcolors=16
-color gruvbox
-set background=dark
+" let g:gruvbox_italic=1
+" let g:gruvbox_termcolors=16
+" color gruvbox
+" set background=dark
 
 
 
@@ -161,8 +161,8 @@ nnoremap <silent> <LEADER>f :Files<CR>
 "smartim
 
 "vim-im-select 自定切中英问题解决
-let g:im_select_get_im_cmd = ['im-select']
-let g:im_select_default = 'com.apple.keylayout.ABC'
+" let g:im_select_get_im_cmd = ['im-select']
+" let g:im_select_default = 'com.apple.keylayout.ABC'
 
 " debuger config
 " packadd! vimspector
