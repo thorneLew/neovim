@@ -58,6 +58,8 @@ set smartcase
 "使用plugged来管理插件
 call plug#begin('$HOME/.config/nvim/plugged')
 
+" startup screent
+Plug 'mhinz/vim-startify'
 
 "UI
 " 皮肤主题
