@@ -82,7 +82,7 @@ Plug 'vim-airline/vim-airline-themes'
 "功能增强
 "
 ""添加目录树：nerdtree"
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 "语法检查和语义错误
 Plug 'dense-analysis/ale'
 "快速注释
@@ -188,10 +188,10 @@ nnoremap <tab> :bn<CR>
 nnoremap <LEADER>c  :bdelete<CR>
 
 
-"nerdtree config
-map <LEADER>t :NERDTreeToggle<CR> 
-" current files menu
-map tn :exec('NERDTree '.expand('%:h'))<CR>
+""nerdtree config
+"map <LEADER>t :NERDTreeToggle<CR> 
+"" current files menu
+"map tn :exec('NERDTree '.expand('%:h'))<CR>
 
 
 
@@ -210,7 +210,8 @@ let g:coc_global_extensions = [
             \'coc-browser', 
             \'coc-yank', 
             \'coc-highlight', 
-            \'coc-vetur'
+            \'coc-vetur',
+            \'coc-explorer'
             \]
 
 " TextEdit might fail if hidden is not set.
@@ -276,6 +277,9 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 nnoremap <silent> <LEADER>y  :<C-u>CocList -A --normal yank<Cr>
+
+" coc-explorer config
+:nmap <LEADER>t <Cmd>CocCommand explorer<CR>
 
 " coc-config - end
 

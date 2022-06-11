@@ -1,5 +1,6 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.formatOnSaveFiletypes": ["json"],
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "explorer.quitOnOpen": true
 }
