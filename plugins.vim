@@ -141,7 +141,7 @@ call plug#end()
 map <Leader> <Plug>(easymotion-prefix)
 
 
-" vim-visual-multi 不生效 -- 需要再考察
+" vim-visual-multi 
 let g:VM_maps = {}
 let g:VM_maps["Select Operator"] = ''
 let g:VM_maps['Find Under']         = '<C-,>'
@@ -200,6 +200,7 @@ nnoremap <LEADER>c  :bdelete<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = [
             \'coc-json', 
+            \'coc-clangd', 
             \'coc-vimlsp', 
             \'coc-eslint', 
             \'coc-prettier', 
@@ -211,8 +212,11 @@ let g:coc_global_extensions = [
             \'coc-yank', 
             \'coc-highlight', 
             \'coc-vetur',
-            \'coc-explorer'
+            \'coc-explorer',
             \]
+let g:loaded_perl_provider = 0
+let g:loaded_python3_provider = 0
+
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -263,6 +267,12 @@ nnoremap <silent> <LEADER>h :call <SID>show_documentation()<CR>
 "format codeFile
 vmap <C-f> <Plug>(coc-format-selected)
 
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+nmap <leader>rf <Plug>(coc-refactor)
+
+" nmap <LEADER>d <Cmd>CocCommand document.renameCurrentWord<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
