@@ -1,6 +1,7 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.formatOnSaveFiletypes": ["json"],
+  "coc.preferences.formatOnSaveFiletypes": ["json", "go"],
   "eslint.autoFixOnSave": true,
-  "explorer.quitOnOpen": true
+  "explorer.quitOnOpen": true,
+  "solidity.remapping": {}
 }
