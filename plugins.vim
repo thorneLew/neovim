@@ -107,8 +107,7 @@ Plug 'voldikss/vim-floaterm'
 "补全成对的括号
 Plug 'jiangmiao/auto-pairs'
 " 断点工具
-" Plug 'puremourning/vimspector'
-"
+Plug 'puremourning/vimspector'
 
 "突出特殊字符
 Plug 'unblevable/quick-scope'
@@ -160,17 +159,20 @@ nnoremap <silent> <LEADER>f :Files<CR>
 "vim-im-select 自定切中英问题解决
 " let g:im_select_get_im_cmd = ['im-select']
 " let g:im_select_default = 'com.apple.keylayout.ABC'
+" let g:python3_host_prog = '/opt/homebrew/bin/python3.9'
+let g:loaded_perl_provider = 0
+let g:loaded_python3_provider = 0
 
 " debuger config
 " packadd! vimspector
-let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
-
+let g:vimspector_enable_mappings='HUMAN'
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-go', 'CodeLLDB', 'vscode-node-debug2' ]
 
 "floaterm config 终端-弹窗
-let  g:floaterm_keymap_new     =  '<F7>'
-let  g:floaterm_keymap_prev    =  '<F8>'
-let  g:floaterm_keymap_next    =  '<F9>'
-let  g:floaterm_keymap_toggle  =  '<F12>'
+" let  g:floaterm_keymap_new     =  '<F7>'
+" let  g:floaterm_keymap_prev    =  '<F8>'
+" let  g:floaterm_keymap_next    =  '<F9>'
+" let  g:floaterm_keymap_toggle  =  '<F12>'
 
 
 "airline config
@@ -207,8 +209,6 @@ let g:coc_global_extensions = [
             \'coc-explorer',
             \'coc-solidity'
             \]
-let g:loaded_perl_provider = 0
-let g:loaded_python3_provider = 0
 
 " coc-go 
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
