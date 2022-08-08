@@ -112,6 +112,9 @@ Plug 'puremourning/vimspector'
 "突出特殊字符
 Plug 'unblevable/quick-scope'
 Plug 'ybian/smartim'
+" 翻译
+Plug 'voldikss/vim-translator'
+
 
 " Plug 'brglng/vim-im-select'
 call plug#end()
@@ -149,6 +152,11 @@ let g:VM_maps['Add Cursor Down']    = '<C-Down>'
 let g:VM_maps['Add Cursor At Pos']  = '<C-x>'
 let g:VM_maps['Add Cursor At Word'] = '<C-w>'
 let g:VM_maps['Remove Region']      = 'q'
+
+
+" voldikss/vim-translator
+
+let g:translator_default_engines = ['bing', 'google', 'haici', 'youdao']
 
 
 " fzf plugin
