@@ -114,7 +114,8 @@ Plug 'unblevable/quick-scope'
 Plug 'ybian/smartim'
 " 翻译
 Plug 'voldikss/vim-translator'
-
+" 代码片段
+Plug 'honza/vim-snippets'
 
 " Plug 'brglng/vim-im-select'
 call plug#end()
@@ -215,6 +216,7 @@ let g:coc_global_extensions = [
             \'coc-highlight', 
             \'coc-vetur',
             \'coc-explorer',
+            \'coc-snippets',
             \'coc-solidity'
             \]
 
@@ -223,6 +225,11 @@ autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.org
 
 " TextEdit might fail if hidden is not set.
 set hidden
+"coc-snippets
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.

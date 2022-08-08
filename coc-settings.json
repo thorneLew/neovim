@@ -3,5 +3,9 @@
   "coc.preferences.formatOnSaveFiletypes": ["json", "go"],
   "eslint.autoFixOnSave": true,
   "explorer.quitOnOpen": true,
-  "solidity.remapping": {}
+  "solidity.remapping": {},
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips"
+  ]
 }
